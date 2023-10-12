@@ -3,6 +3,7 @@ using BepInEx.Logging;
 using HarmonyLib;
 using Extra_Decor_Rusty_Pack.Buildables.Exterior;
 using System.Reflection;
+using Extra_Decor_Rusty_Pack.Buildables.Interior;
 
 namespace Extra_Decor_Rusty_Pack
 {
@@ -29,7 +30,24 @@ namespace Extra_Decor_Rusty_Pack
 
         private void InitializePrefabs()
         {
-            BuildableLifePodExploded.Register();
+            BuildableLifePod2Exploded.Register();
+            BuildableLifePod3Exploded.Register();
+            BuildableLifePod4Exploded.Register();
+            BuildableLifePod6Exploded.Register();
+            BuildableLifePod7Exploded.Register();
+            BuildableLifePod12Exploded.Register();
+            BuildableLifePod13Exploded.Register();
+            BuildableLifePod17Exploded.Register();
+            BuildableLifePod19Exploded.Register();
+            BuildableAuroraDoorFrameMedium.Register();
+            BuildableAuroraDoorFrameThin.Register();
+            BuildableDegasiFoundation1.Register();
+            BuildableDegasiFloatingIslandBase1.Register();
+            BuildableDegasiRustedSpotlight.Register();
+            BuildableExplodedDebris6.Register();
+            BuildableExplodedDebris7.Register();
+            BuildableExplodedDebris20.Register();
+            BuildableReinforceHull.Register();
         }
     }
 }

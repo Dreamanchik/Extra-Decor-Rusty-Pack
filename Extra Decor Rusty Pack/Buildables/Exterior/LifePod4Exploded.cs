@@ -9,9 +9,9 @@ using static CraftData;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 {
-    public static class BuildableLifePodExploded
+    public static class BuildableLifePod4Exploded
     {
-        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableLifePodExploded", "Life Pod Exploded", "Alterra escape pod from the Aurora. Highly damaged")
+        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableLifePod4Exploded", "Life Pod 4 Exploded", "Alterra escape pod from the Aurora. Highly damaged")
             .WithIcon(SpriteManager.Get(TechType.Locker));
 
         public static void Register()
@@ -20,15 +20,15 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
             float MinPlaceDistance = 5;
             float MaxPlaceDistance = 20;
             CustomPrefab LifePodExplodedPrefab = new CustomPrefab(Info);
-            CloneTemplate LifePodExplodedClone = new CloneTemplate(Info, "00037e80-3037-48cf-b769-dc97c761e5f6");
+            CloneTemplate LifePodExplodedClone = new CloneTemplate(Info, "f2b9fe45-39d6-4307-b1e0-143eb1937d6e");
 
             LifePodExplodedClone.ModifyPrefab += obj =>
             {
-                ConstructableFlags constructableFlagsInside = ConstructableFlags.Outside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
+                ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Outside | ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
 
-                GameObject LifePodExplodedModel = obj.transform.Find("life_pod_exploded_02_02").gameObject;
+                GameObject LifePodExplodedModel = obj.transform.Find("life_pod_exploded_01").gameObject;
 
-                Constructable LifePodExplodedConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInside, LifePodExplodedModel);
+                Constructable LifePodExplodedConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, LifePodExplodedModel);
                 LifePodExplodedConstructable.placeDefaultDistance = PlaceDistance;
                 LifePodExplodedConstructable.placeMinDistance = MinPlaceDistance;
                 LifePodExplodedConstructable.placeMaxDistance = MaxPlaceDistance;
