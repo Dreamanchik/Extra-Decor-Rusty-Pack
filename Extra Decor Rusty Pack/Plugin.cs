@@ -30,6 +30,7 @@ namespace Extra_Decor_Rusty_Pack
 
         private void InitializePrefabs()
         {
+            //Lifepods
             BuildableLifePod2Exploded.Register();
             BuildableLifePod3Exploded.Register();
             BuildableLifePod4Exploded.Register();
@@ -39,15 +40,33 @@ namespace Extra_Decor_Rusty_Pack
             BuildableLifePod13Exploded.Register();
             BuildableLifePod17Exploded.Register();
             BuildableLifePod19Exploded.Register();
+            //Alterra
             BuildableAuroraDoorFrameMedium.Register();
             BuildableAuroraDoorFrameThin.Register();
-            BuildableDegasiFoundation1.Register();
-            BuildableDegasiFloatingIslandBase1.Register();
-            BuildableDegasiRustedSpotlight.Register();
+            BuildableAuroraDoorMedium.Register();
+            BuildableAuroraDoorThin.Register();
+            BuildableAuroraDoorBulkheadMedium.Register();
+            BuildableAuroraDoorBulkheadThin.Register();
+            BuildableReinforceHull.Register();
+            BuildableHullCrack.Register();
             BuildableExplodedDebris6.Register();
             BuildableExplodedDebris7.Register();
+            BuildableExplodedDebris16.Register();
+            BuildableExplodedDebris18.Register();
             BuildableExplodedDebris20.Register();
-            BuildableReinforceHull.Register();
+            //Degasi
+            BuildableDegasiAbandonedBase1.Register();
+            BuildableDegasiAbandonedBase2.Register();
+            BuildableDegasiFoundation1.Register();
+            BuildableDegasiFoundation2.Register();
+            BuildableDegasiFoundation3.Register();
+            BuildableDegasiFloatingIslandBase1.Register();
+            BuildableDegasiFloatingIslandBase2.Register();
+            BuildableDegasiFloatingIslandBase3.Register();
+            BuildableDegasiGrandReefBase.Register();
+            BuildableDegasiJellyshroomBase1.Register();
+            BuildableDegasiJellyshroomBase2.Register();
+            BuildableDegasiRustedSpotlight.Register();
         }
     }
 }
