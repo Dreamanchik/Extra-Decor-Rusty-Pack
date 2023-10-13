@@ -6,6 +6,7 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using JetBrains.Annotations;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Interior
 {
@@ -30,7 +31,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
 
                 Constructable AuroraDoorBulkheadConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, AuroraDoorBulkheadModel);
                 Vector3 DoorScale = AuroraDoorBulkheadConstructable.transform.localScale;
-                DoorScale.y = 1.15f;
+                DoorScale.y = 0.91f;
                 AuroraDoorBulkheadConstructable.placeDefaultDistance = PlaceDistance;
                 AuroraDoorBulkheadConstructable.placeMinDistance = MinPlaceDistance;
                 AuroraDoorBulkheadConstructable.placeMaxDistance = MaxPlaceDistance;

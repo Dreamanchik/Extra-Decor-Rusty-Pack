@@ -19,29 +19,31 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
             float PlaceDistance = 5;
             float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
-            CustomPrefab DegasiFoundationPrefab = new CustomPrefab(Info);
-            CloneTemplate DegasiFoundationClone = new CloneTemplate(Info, "29680106-d337-46ea-a55b-5eb5fd8445f3");
+            CustomPrefab HullCrackPrefab = new CustomPrefab(Info);
+            CloneTemplate HullCrackClone = new CloneTemplate(Info, "29680106-d337-46ea-a55b-5eb5fd8445f3");
 
-            DegasiFoundationClone.ModifyPrefab += obj =>
+            HullCrackClone.ModifyPrefab += obj =>
             {
-                ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Outside | ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
+                ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Outside | ConstructableFlags.Inside | ConstructableFlags.Wall | ConstructableFlags.AllowedOnConstructable;
 
-                GameObject DegasiFoundationModel = obj.transform.Find("Base_hull_crack_03").gameObject;
+                GameObject HullCrackModel = obj.transform.Find("base_hull_crack_03").gameObject;
 
-                Constructable DegasiFoundationConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, DegasiFoundationModel);
-                DegasiFoundationConstructable.placeDefaultDistance = PlaceDistance;
-                DegasiFoundationConstructable.placeMinDistance = MinPlaceDistance;
-                DegasiFoundationConstructable.placeMaxDistance = MaxPlaceDistance;
+                Constructable HullCrackConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, HullCrackModel);
+                Vector3 Rotation = HullCrackConstructable.transform.localEulerAngles;
+                Rotation.y = 90f;
+                HullCrackConstructable.placeDefaultDistance = PlaceDistance;
+                HullCrackConstructable.placeMinDistance = MinPlaceDistance;
+                HullCrackConstructable.placeMaxDistance = MaxPlaceDistance;
             };
 
-            DegasiFoundationPrefab.SetGameObject(DegasiFoundationClone);
-            DegasiFoundationPrefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule);
+            HullCrackPrefab.SetGameObject(HullCrackClone);
+            HullCrackPrefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule);
 
-            DegasiFoundationPrefab.SetRecipe(new RecipeData(
+            HullCrackPrefab.SetRecipe(new RecipeData(
                 new Ingredient(TechType.Titanium, 1) 
                 ));
 
-            DegasiFoundationPrefab.Register();
+            HullCrackPrefab.Register();
         }
     }
 }

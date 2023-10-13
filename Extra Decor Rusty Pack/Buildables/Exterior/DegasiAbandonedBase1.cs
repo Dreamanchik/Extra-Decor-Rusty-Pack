@@ -26,11 +26,9 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
             {
                 ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Outside | ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
 
-                GameObject DegasiFloatingIslandBaseModel = obj.transform.Find("BaseCell").gameObject;
+                GameObject DegasiFloatingIslandBaseModel = obj.transform.Find("BaseCell(Clone)").gameObject;
 
                 Constructable DegasiFloatingIslandBaseConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, DegasiFloatingIslandBaseModel);
-                Vector3 LocalPosition = DegasiFloatingIslandBaseConstructable.transform.localPosition;
-                LocalPosition.y = 10f;   
                 DegasiFloatingIslandBaseConstructable.placeDefaultDistance = PlaceDistance;
                 DegasiFloatingIslandBaseConstructable.placeMinDistance = MinPlaceDistance;
                 DegasiFloatingIslandBaseConstructable.placeMaxDistance = MaxPlaceDistance;

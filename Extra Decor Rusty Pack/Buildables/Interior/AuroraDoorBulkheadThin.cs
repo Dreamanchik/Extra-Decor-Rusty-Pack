@@ -11,7 +11,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
 {
     public static class BuildableAuroraDoorBulkheadThin
     {
-        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableAuroraDoorBulkheadThin", "Aurora Door Frame Thin", "Door usually placed in alterra ships.")
+        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableAuroraDoorBulkheadThin", "Aurora Door Bulkhead Thin", "Door usually placed in alterra ships.")
             .WithIcon(SpriteManager.Get(TechType.BaseBulkhead));
 
         public static void Register()
@@ -26,12 +26,12 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
             {
                 ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Outside | ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
 
-                GameObject AuroraDoorBulkheadModel = obj.transform.Find("Doorframe").gameObject;
+                GameObject AuroraDoorBulkheadModel = obj.transform.Find("Starship_doors_manual_01").gameObject;
 
                 Constructable AuroraDoorBulkheadConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, AuroraDoorBulkheadModel);
                 Vector3 DoorScale = AuroraDoorBulkheadConstructable.transform.localScale;
-                DoorScale.y = 1.15f;
-                DoorScale.y = 0.77f;
+                DoorScale.y = 0.91f;
+                DoorScale.x = 0.77f;
                 AuroraDoorBulkheadConstructable.placeDefaultDistance = PlaceDistance;
                 AuroraDoorBulkheadConstructable.placeMinDistance = MinPlaceDistance;
                 AuroraDoorBulkheadConstructable.placeMaxDistance = MaxPlaceDistance;

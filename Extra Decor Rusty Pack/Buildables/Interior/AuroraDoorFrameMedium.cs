@@ -11,7 +11,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
 {
     public static class BuildableAuroraDoorFrameMedium
     {
-        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableAuroraDoorFrameMedium", "Aurora Door Frame Thin", "Door frame usually placed in alterra ships.")
+        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableAuroraDoorFrameMedium", "Aurora Door Frame Medium", "Door frame usually placed in alterra ships.")
             .WithIcon(SpriteManager.Get(TechType.BaseBulkhead));
 
         public static void Register()

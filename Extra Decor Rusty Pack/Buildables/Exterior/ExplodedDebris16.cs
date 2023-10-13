@@ -20,7 +20,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
             float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
             CustomPrefab ExplodedDebrisPrefab = new CustomPrefab(Info);
-            CloneTemplate ExplodedDebrisClone = new CloneTemplate(Info, "0c65ee6e-a84a-4989-a846-19eb53c13071");
+            CloneTemplate ExplodedDebrisClone = new CloneTemplate(Info, "3981a55f-0754-466a-8932-6e245b4ef846");
 
             ExplodedDebrisClone.ModifyPrefab += obj =>
             {

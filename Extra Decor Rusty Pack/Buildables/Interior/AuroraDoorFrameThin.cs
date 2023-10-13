@@ -31,7 +31,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
                 Constructable AuroraDoorFrameConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, AuroraDoorFrameModel);
                 Vector3 DoorScale = AuroraDoorFrameConstructable.transform.localScale;
                 DoorScale.y = 1.15f;
-                DoorScale.y = 0.77f;
+                DoorScale.x = 0.77f;
                 AuroraDoorFrameConstructable.placeDefaultDistance = PlaceDistance;
                 AuroraDoorFrameConstructable.placeMinDistance = MinPlaceDistance;
                 AuroraDoorFrameConstructable.placeMaxDistance = MaxPlaceDistance;

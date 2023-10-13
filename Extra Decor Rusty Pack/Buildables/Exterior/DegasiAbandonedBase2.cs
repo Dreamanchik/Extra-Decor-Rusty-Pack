@@ -19,31 +19,31 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
             float PlaceDistance = 10;
             float MinPlaceDistance = 5;
             float MaxPlaceDistance = 20;
-            CustomPrefab DegasiFloatingIslandBasePrefab = new CustomPrefab(Info);
-            CloneTemplate DegasiFloatingIslandBaseClone = new CloneTemplate(Info, "8f20a08c-c981-4fad-a57b-2de2106b8abf");
+            CustomPrefab DegasiAbandonedBasePrefab = new CustomPrefab(Info);
+            CloneTemplate DegasiAbandonedBaseClone = new CloneTemplate(Info, "8f20a08c-c981-4fad-a57b-2de2106b8abf");
 
-            DegasiFloatingIslandBaseClone.ModifyPrefab += obj =>
+            DegasiAbandonedBaseClone.ModifyPrefab += obj =>
             {
                 ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Outside | ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
 
-                GameObject DegasiFloatingIslandBaseModel = obj.transform.Find("BaseCell").gameObject;
+                GameObject DegasiAbandonedBaseModel = obj.transform.Find("BaseCell(Clone)").gameObject;
 
-                Constructable DegasiFloatingIslandBaseConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, DegasiFloatingIslandBaseModel);
-                Vector3 LocalPosition = DegasiFloatingIslandBaseConstructable.transform.localPosition;
-                LocalPosition.y = 10f;   
-                DegasiFloatingIslandBaseConstructable.placeDefaultDistance = PlaceDistance;
-                DegasiFloatingIslandBaseConstructable.placeMinDistance = MinPlaceDistance;
-                DegasiFloatingIslandBaseConstructable.placeMaxDistance = MaxPlaceDistance;
+                Constructable DegasiAbandonedBaseConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, DegasiAbandonedBaseModel);
+                DegasiAbandonedBaseConstructable.placeDefaultDistance = PlaceDistance;
+                DegasiAbandonedBaseConstructable.placeMinDistance = MinPlaceDistance;
+                DegasiAbandonedBaseConstructable.placeMaxDistance = MaxPlaceDistance;
+                Vector3 Localpos = DegasiAbandonedBaseConstructable.transform.localPosition;
+                Localpos.y += 3f;
             };
 
-            DegasiFloatingIslandBasePrefab.SetGameObject(DegasiFloatingIslandBaseClone);
-            DegasiFloatingIslandBasePrefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule);
+            DegasiAbandonedBasePrefab.SetGameObject(DegasiAbandonedBaseClone);
+            DegasiAbandonedBasePrefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule);
 
-            DegasiFloatingIslandBasePrefab.SetRecipe(new RecipeData(
+            DegasiAbandonedBasePrefab.SetRecipe(new RecipeData(
                 new Ingredient(TechType.Titanium, 4) 
                 ));
 
-            DegasiFloatingIslandBasePrefab.Register();
+            DegasiAbandonedBasePrefab.Register();
         }
     }
 }
