@@ -9,9 +9,9 @@ using static CraftData;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
-    public static class BuildableWorkbenchFragment1
+    public static class BuildableWorkbenchFragment2
     {
-        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableWorkbenchFragment1", "Workbench Fragment 1", "Workbench fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
+        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableWorkbenchFragment2", "Workbench Fragment 2", "Workbench fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
             .WithIcon(SpriteManager.Get(TechType.Cyclops));
 
         public static void Register()
@@ -20,7 +20,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
             float MinPlaceDistance = 1;
             float MaxPlaceDistance = 20;
             CustomPrefab WorkbenchFragmentPrefab = new CustomPrefab(Info);
-            CloneTemplate WorkbenchFragmentClone = new CloneTemplate(Info, "8029a9ce-ab75-46d0-a8ab-63138f6f83e4");
+            CloneTemplate WorkbenchFragmentClone = new CloneTemplate(Info, "4cc70e47-a05f-4e27-9920-9a6d0e90083d");
 
             WorkbenchFragmentClone.ModifyPrefab += obj =>
             {

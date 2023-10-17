@@ -17,7 +17,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
         public static void Register()
         {
             float PlaceDistance = 10;
-            float MinPlaceDistance = 2;
+            float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
             CustomPrefab PowerTransmitterFragmentPrefab = new CustomPrefab(Info);
             CloneTemplate PowerTransmitterFragmentClone = new CloneTemplate(Info, "7436aeba-f8df-4887-b369-e630fa01f716");

@@ -17,7 +17,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
         public static void Register()
         {
             float PlaceDistance = 10;
-            float MinPlaceDistance = 2;
+            float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
             CustomPrefab PropulsionCannonPrefab = new CustomPrefab(Info);
             CloneTemplate PropulsionCannonClone = new CloneTemplate(Info, "21e4c817-e3a7-4a0d-a931-0bc68243cb1e");

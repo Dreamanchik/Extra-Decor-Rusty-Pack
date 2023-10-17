@@ -17,7 +17,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
         public static void Register()
         {
             float PlaceDistance = 10;
-            float MinPlaceDistance = 2;
+            float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
             CustomPrefab LaserCutterFragmentPrefab = new CustomPrefab(Info);
             CloneTemplate LaserCutterFragmentClone = new CloneTemplate(Info, "aeff4dad-8256-475b-a764-d5e7028220ce");

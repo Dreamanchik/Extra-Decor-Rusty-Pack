@@ -17,7 +17,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
         public static void Register()
         {
             float PlaceDistance = 10;
-            float MinPlaceDistance = 2;
+            float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
             CustomPrefab LedLightFragmentPrefab = new CustomPrefab(Info);
             CloneTemplate LedLightFragmentClone = new CloneTemplate(Info, "c1f8aa68-0ac0-419e-81ec-b7a388027c24");

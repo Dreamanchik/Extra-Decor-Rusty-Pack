@@ -9,9 +9,9 @@ using static CraftData;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
-    public static class BuildablePowerCellChargerFragment1
+    public static class BuildablePowerCellChargerFragment2
     {
-        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildablePowerCellChargerFragment1", "Power Cell Charger Fragment 1", "Power Cell Charger fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
+        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildablePowerCellChargerFragment2", "Power Cell Charger Fragment 2", "Power Cell Charger fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
             .WithIcon(SpriteManager.Get(TechType.Cyclops));
 
         public static void Register()
@@ -20,7 +20,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
             float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
             CustomPrefab PowerCellChargerFragmentPrefab = new CustomPrefab(Info);
-            CloneTemplate PowerCellChargerFragmentClone = new CloneTemplate(Info, "f41a1855-1dc1-495a-adf2-c4495fd39936");
+            CloneTemplate PowerCellChargerFragmentClone = new CloneTemplate(Info, "9569f745-4853-47cf-aaf5-b849c91651f4");
 
             PowerCellChargerFragmentClone.ModifyPrefab += obj =>
             {

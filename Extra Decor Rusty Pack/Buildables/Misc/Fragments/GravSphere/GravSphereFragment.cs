@@ -17,7 +17,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
         public static void Register()
         {
             float PlaceDistance = 10;
-            float MinPlaceDistance = 2;
+            float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
             CustomPrefab GravSphereFragmentPrefab = new CustomPrefab(Info);
             CloneTemplate GravSphereFragmentClone = new CloneTemplate(Info, "6e4f85c2-ad1d-4d0a-b20c-1158204ee424");

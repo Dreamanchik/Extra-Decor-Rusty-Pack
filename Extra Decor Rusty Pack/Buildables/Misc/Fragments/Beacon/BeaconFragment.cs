@@ -17,7 +17,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
         public static void Register()
         {
             float PlaceDistance = 10;
-            float MinPlaceDistance = 2;
+            float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
             CustomPrefab BeaconFragmentPrefab = new CustomPrefab(Info);
             CloneTemplate BeaconFragmentClone = new CloneTemplate(Info, "a50c91eb-f7cf-4fbf-8157-0aa8d444820c");

@@ -68,7 +68,12 @@ namespace Extra_Decor_Rusty_Pack
             //BuildableDegasiJellyshroomBase1.Register();
             //BuildableDegasiRustedSpotlight.Register();
             // Fragments
+            BuildableBatteryChargingStationFragment1.Register();
+            BuildableBatteryChargingStationFragment2.Register();
             BuildableBeaconFragment.Register();
+            BuildableBioReactorFragment1.Register();
+            BuildableBioReactorFragment2.Register();
+            BuildableBioReactorFragment3.Register();
             BuildableBioReactorFragment4.Register();
             BuildableConstructorFragment1.Register();
             BuildableConstructorFragment2.Register();
@@ -97,6 +102,7 @@ namespace Extra_Decor_Rusty_Pack
             BuildableExosuitGrapplingArmFragment.Register();
             BuildableExosuitTorpedoArmFragment.Register();
             BuildableExosuitPropulsionArmFragment.Register();
+            BuildableSmallStorageFragment.Register();
             BuildableExosuitDrillArmFragment.Register();
             BuildableGravSphereFragment.Register();
             BuildableLaserCutterFragment.Register();
@@ -111,13 +117,22 @@ namespace Extra_Decor_Rusty_Pack
             BuildableMoonPoolFragment4.Register();
             BuildableMoonPoolFragment5.Register();
             BuildableMoonPoolFragment6.Register();
+            BuildableNuclearReactorFragment1.Register();
+            BuildableNuclearReactorFragment2.Register();
+            BuildableNuclearReactorFragment3.Register();
+            BuildableNuclearReactorFragment4.Register();
             BuildablePowerCellChargerFragment1.Register();
+            BuildablePowerCellChargerFragment2.Register();
             BuildablePowerTransmitterFragment.Register();
             BuildablePropulsionCannonFragment.Register();
-            BuildableSeaglideFragment1.Register();
-            BuildableStasisRifleFragment1.Register();
+            BuildableSeaglideFragment.Register();
+            BuildableStasisRifleFragment.Register();
+            BuildableThermalPlantFragment1.Register();
             BuildableThermalPlantFragment2.Register();
+            BuildableThermalPlantFragment3.Register();
             BuildableWorkbenchFragment1.Register();
+            BuildableWorkbenchFragment2.Register();
+            BuildableWorkbenchFragment3.Register();
         }
     }
 }

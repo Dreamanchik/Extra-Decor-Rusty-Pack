@@ -17,7 +17,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
         public static void Register()
         {
             float PlaceDistance = 10;
-            float MinPlaceDistance = 2;
+            float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
             CustomPrefab ExosuitFragmentPrefab = new CustomPrefab(Info);
             CloneTemplate ExosuitFragmentClone = new CloneTemplate(Info, "4904e113-8765-4d27-a750-33d89d50a8ae");

@@ -9,15 +9,15 @@ using static CraftData;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
-    public static class BuildableSeaglideFragment1
+    public static class BuildableSeaglideFragment
     {
-        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableSeaglideFragment1", "Seaglide Fragment 1", "Seaglide fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
+        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableSeaglideFragment", "Seaglide Fragment", "Seaglide fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
             .WithIcon(SpriteManager.Get(TechType.Cyclops));
 
         public static void Register()
         {
             float PlaceDistance = 10;
-            float MinPlaceDistance = 2;
+            float MinPlaceDistance = 0;
             float MaxPlaceDistance = 20;
             CustomPrefab SeaglideFragmentPrefab = new CustomPrefab(Info);
             CloneTemplate SeaglideFragmentClone = new CloneTemplate(Info, "127f22a3-44cd-4341-adb8-8937317f53de");
