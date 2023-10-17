@@ -9,9 +9,9 @@ using static CraftData;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
-    public static class BuildableCyclopsEngineFragment1
+    public static class BuildableCyclopsHullFragment5
     {
-        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableCyclopsFragmentEngine1", "Cyclops Engine Fragment 1", "Cyclops engine fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
+        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableCyclopsFragmentHull5", "Cyclops Hull Fragment 5", "Cyclops hull fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
             .WithIcon(SpriteManager.Get(TechType.Cyclops));
 
         public static void Register()
@@ -20,7 +20,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
             float MinPlaceDistance = 2;
             float MaxPlaceDistance = 20;
             CustomPrefab CyclopsFragmentPrefab = new CustomPrefab(Info);
-            CloneTemplate CyclopsFragmentClone = new CloneTemplate(Info, "3c076458-505e-4683-90c1-34c1f7939a0f");
+            CloneTemplate CyclopsFragmentClone = new CloneTemplate(Info, "bc62e06d-0ccc-47b4-90c5-62f6422d4af7");
 
             CyclopsFragmentClone.ModifyPrefab += obj =>
             {

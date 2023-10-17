@@ -4,6 +4,7 @@ using HarmonyLib;
 using Extra_Decor_Rusty_Pack.Buildables.Exterior;
 using System.Reflection;
 using Extra_Decor_Rusty_Pack.Buildables.Interior;
+using Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops;
 
 namespace Extra_Decor_Rusty_Pack
 {
@@ -48,7 +49,7 @@ namespace Extra_Decor_Rusty_Pack
             BuildableAuroraDoorBulkheadMedium.Register();
             BuildableAuroraDoorBulkheadThin.Register();
             BuildableReinforceHull.Register();
-            BuildableHullCrack.Register();
+            //BuildableHullCrack.Register(); --- Cant rotate things :(
             BuildableExplodedDebris6.Register();
             BuildableExplodedDebris7.Register();
             BuildableExplodedDebris16.Register();
@@ -67,6 +68,56 @@ namespace Extra_Decor_Rusty_Pack
             //BuildableDegasiJellyshroomBase1.Register();
             //BuildableDegasiRustedSpotlight.Register();
             // Fragments
+            BuildableBeaconFragment.Register();
+            BuildableBioReactorFragment4.Register();
+            BuildableConstructorFragment1.Register();
+            BuildableConstructorFragment2.Register();
+            BuildableConstructorFragment3.Register();
+            BuildableConstructorFragment4.Register();
+            BuildableCyclopsBridgeFragment1.Register();
+            BuildableCyclopsBridgeFragment2.Register();
+            BuildableCyclopsBridgeFragment3.Register();
+            BuildableCyclopsEngineFragment1.Register();
+            BuildableCyclopsEngineFragment2.Register();
+            BuildableCyclopsEngineFragment3.Register();
+            BuildableCyclopsHullFragment1.Register();
+            BuildableCyclopsHullFragment2.Register();
+            BuildableCyclopsHullFragment3.Register();
+            BuildableCyclopsHullFragment4.Register();
+            BuildableCyclopsHullFragment5.Register();
+            BuildableCyclopsHullFragment6.Register();
+            BuildableCyclopsHullFragment7.Register();
+            BuildableCyclopsHullFragment8.Register();
+            BuildableExosuitFragment1.Register();
+            BuildableExosuitFragment2.Register();
+            BuildableExosuitFragment3.Register();
+            BuildableExosuitFragment4.Register();
+            BuildableExosuitFragment5.Register();
+            BuildableExosuitFragment6.Register();
+            BuildableExosuitGrapplingArmFragment.Register();
+            BuildableExosuitTorpedoArmFragment.Register();
+            BuildableExosuitPropulsionArmFragment.Register();
+            BuildableExosuitDrillArmFragment.Register();
+            BuildableGravSphereFragment.Register();
+            BuildableLaserCutterFragment.Register();
+            BuildableLedLightFragment.Register();
+            BuildableMapRoomFragment1.Register();
+            BuildableMapRoomFragment2.Register();
+            BuildableMapRoomFragment3.Register();
+            BuildableMapRoomFragment4.Register();
+            BuildableMoonPoolFragment1.Register();
+            BuildableMoonPoolFragment2.Register();
+            BuildableMoonPoolFragment3.Register();
+            BuildableMoonPoolFragment4.Register();
+            BuildableMoonPoolFragment5.Register();
+            BuildableMoonPoolFragment6.Register();
+            BuildablePowerCellChargerFragment1.Register();
+            BuildablePowerTransmitterFragment.Register();
+            BuildablePropulsionCannonFragment.Register();
+            BuildableSeaglideFragment1.Register();
+            BuildableStasisRifleFragment1.Register();
+            BuildableThermalPlantFragment2.Register();
+            BuildableWorkbenchFragment1.Register();
         }
     }
 }
