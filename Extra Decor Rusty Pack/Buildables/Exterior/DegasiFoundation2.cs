@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 {
     public static class BuildableDegasiFoundation2
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Degasi", "Foundation2.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableDegasiFoundation2", "Degasi Foundation 2", "Foundation built by the Degasi.")
-            .WithIcon(SpriteManager.Get(TechType.BaseFoundation));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {

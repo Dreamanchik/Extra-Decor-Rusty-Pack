@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 {
     public static class BuildableExplodedDebris16
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Debris", "Debris16.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableExplodedDebris16", "Exploded Debris 16", "Debris found on aurora wrecks.")
-            .WithIcon(SpriteManager.Get(TechType.Locker));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
