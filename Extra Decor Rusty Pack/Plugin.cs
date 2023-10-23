@@ -48,6 +48,8 @@ namespace Extra_Decor_Rusty_Pack
             BuildableAuroraDoorThin.Register();
             BuildableAuroraDoorBulkheadMedium.Register();
             BuildableAuroraDoorBulkheadThin.Register();
+            BuildableSubmarineConsole.Register();
+            BuildableSubmarineConsoleWide.Register();
             BuildableReinforceHull.Register();
             //BuildableLifePodSeat1.Register(); --- Need to figure out SkyApplier
             //BuildableSolarPowerCell.Register(); --- Cant rotate things :(
