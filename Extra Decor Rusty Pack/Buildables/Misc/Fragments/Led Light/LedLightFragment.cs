@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
     public static class BuildableLedLightFragment
     {
-        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("Buildable Led Light Fragment", "Led Light Fragment", "Led light fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
-            .WithIcon(SpriteManager.Get(TechType.Cyclops));
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Fragments", "LedLight", "LedLight.png");
+        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableLedLightFragment", "Led Light Fragment", "Led light fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -32,10 +36,11 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 LedLightFragmentConstructable.placeDefaultDistance = PlaceDistance;
                 LedLightFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 LedLightFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
+                LedLightFragmentConstructable.rotationEnabled = true;
             };
 
             LedLightFragmentPrefab.SetGameObject(LedLightFragmentClone);
-            LedLightFragmentPrefab.SetPdaGroupCategory(TechGroup.InteriorModules, TechCategory.InteriorModule);
+            LedLightFragmentPrefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule);
 
             LedLightFragmentPrefab.SetRecipe(new RecipeData(
                 new Ingredient(TechType.Titanium, 2)

@@ -49,7 +49,9 @@ namespace Extra_Decor_Rusty_Pack
             BuildableAuroraDoorBulkheadMedium.Register();
             BuildableAuroraDoorBulkheadThin.Register();
             BuildableReinforceHull.Register();
-            //BuildableHullCrack.Register(); --- Cant rotate things :(
+            BuildableLifePodSeat1.Register();
+            //BuildableSolarPowerCell.Register(); --- Cant rotate things :(
+            //BuildableHullCrack.Register(); --- Cant rotate things :(((
             BuildableExplodedDebris6.Register();
             BuildableExplodedDebris7.Register();
             BuildableExplodedDebris16.Register();
@@ -66,7 +68,10 @@ namespace Extra_Decor_Rusty_Pack
             //BuildableDegasiFloatingIslandBase3.Register();
             //BuildableDegasiGrandReefBase.Register();
             //BuildableDegasiJellyshroomBase1.Register();
-            //BuildableDegasiRustedSpotlight.Register();
+            BuildableDegasiRustedSpotlight.Register();
+            BuildableDegasiRustedFarmingTray.Register();
+            BuildableDegasiRustedPlanterPot2.Register();
+            BuildableDegasiRustedPlanterBox.Register();
             // Fragments
             BuildableBatteryChargingStationFragment1.Register();
             BuildableBatteryChargingStationFragment2.Register();
@@ -102,8 +107,8 @@ namespace Extra_Decor_Rusty_Pack
             BuildableExosuitGrapplingArmFragment.Register();
             BuildableExosuitTorpedoArmFragment.Register();
             BuildableExosuitPropulsionArmFragment.Register();
-            BuildableSmallStorageFragment.Register();
             BuildableExosuitDrillArmFragment.Register();
+            BuildableSmallStorageFragment.Register();
             BuildableGravSphereFragment.Register();
             BuildableLaserCutterFragment.Register();
             BuildableLedLightFragment.Register();

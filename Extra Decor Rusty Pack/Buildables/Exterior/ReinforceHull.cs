@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 {
     public static class BuildableReinforceHull
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Interior", "ReinforceHull.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableReinforceHull", "Cyclops Reinforce Hull", "Old reinforce hull for the cyclops submarine. Does not work.")
-            .WithIcon(SpriteManager.Get(TechType.Cyclops));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -32,10 +36,11 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 ReinforceHullConstructable.placeDefaultDistance = PlaceDistance;
                 ReinforceHullConstructable.placeMinDistance = MinPlaceDistance;
                 ReinforceHullConstructable.placeMaxDistance = MaxPlaceDistance;
+                ReinforceHullConstructable.rotationEnabled = true;
             };
 
             ReinforceHullPrefab.SetGameObject(ReinforceHullClone);
-            ReinforceHullPrefab.SetPdaGroupCategory(TechGroup.Miscellaneous, TechCategory.Misc);
+            ReinforceHullPrefab.SetPdaGroupCategory(TechGroup.InteriorModules, TechCategory.InteriorModule);
 
             ReinforceHullPrefab.SetRecipe(new RecipeData(
                 new Ingredient(TechType.Titanium, 4) 

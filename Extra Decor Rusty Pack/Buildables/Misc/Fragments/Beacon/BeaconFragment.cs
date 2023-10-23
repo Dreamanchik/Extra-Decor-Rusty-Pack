@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
     public static class BuildableBeaconFragment
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Fragments", "Beacon", "Beacon.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableBeaconFragment", "Beacon Fragment", "Beacon fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
-            .WithIcon(SpriteManager.Get(TechType.Cyclops));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -32,6 +36,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 BeaconFragmentConstructable.placeDefaultDistance = PlaceDistance;
                 BeaconFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 BeaconFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
+                BeaconFragmentConstructable.rotationEnabled = true;
             };
 
             BeaconFragmentPrefab.SetGameObject(BeaconFragmentClone);

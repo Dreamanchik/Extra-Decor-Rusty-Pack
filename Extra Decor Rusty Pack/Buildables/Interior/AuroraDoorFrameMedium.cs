@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Interior
 {
     public static class BuildableAuroraDoorFrameMedium
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Doors", "DoorFrameMedium.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableAuroraDoorFrameMedium", "Aurora Door Frame Medium", "Door frame usually placed in alterra ships.")
-            .WithIcon(SpriteManager.Get(TechType.BaseBulkhead));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -35,6 +39,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
                 AuroraDoorFrameConstructable.placeMinDistance = MinPlaceDistance;
                 AuroraDoorFrameConstructable.placeMaxDistance = MaxPlaceDistance;
                 AuroraDoorFrameConstructable.transform.localScale = DoorScale;
+                AuroraDoorFrameConstructable.rotationEnabled = true;
             };
 
             AuroraDoorFramePrefab.SetGameObject(AuroraDoorFrameClone);

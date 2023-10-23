@@ -32,6 +32,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 DegasiAbandonedBaseConstructable.placeDefaultDistance = PlaceDistance;
                 DegasiAbandonedBaseConstructable.placeMinDistance = MinPlaceDistance;
                 DegasiAbandonedBaseConstructable.placeMaxDistance = MaxPlaceDistance;
+                DegasiAbandonedBaseConstructable.rotationEnabled = true;
                 Vector3 Localpos = DegasiAbandonedBaseConstructable.transform.localPosition;
                 Localpos.y += 3f;
             };

@@ -34,6 +34,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 DegasiGrandReefBaseConstructable.placeDefaultDistance = PlaceDistance;
                 DegasiGrandReefBaseConstructable.placeMinDistance = MinPlaceDistance;
                 DegasiGrandReefBaseConstructable.placeMaxDistance = MaxPlaceDistance;
+                DegasiGrandReefBaseConstructable.rotationEnabled = true;
             };
 
             DegasiGrandReefBasePrefab.SetGameObject(DegasiGrandReefBaseClone);

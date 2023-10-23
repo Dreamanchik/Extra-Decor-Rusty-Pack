@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
     public static class BuildableThermalPlantFragment3
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Fragments", "ThermalPlant", "ThermalPlant3.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableThermalPlantFragment3", "Thermal Plant Fragment 3", "Thermal Plant fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
-            .WithIcon(SpriteManager.Get(TechType.Cyclops));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -32,6 +36,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 ThermalPlantFragmentConstructable.placeDefaultDistance = PlaceDistance;
                 ThermalPlantFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 ThermalPlantFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
+                ThermalPlantFragmentConstructable.rotationEnabled = true;
             };
 
             ThermalPlantFragmentPrefab.SetGameObject(ThermalPlantFragmentClone);

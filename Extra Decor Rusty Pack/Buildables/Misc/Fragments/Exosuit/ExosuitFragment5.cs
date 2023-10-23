@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
     public static class BuildableExosuitFragment5
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Fragments", "Exosuit", "Exosuit5.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableExosuitFragment5", "Exosuit Fragment 5", "Exosuit fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
-            .WithIcon(SpriteManager.Get(TechType.Cyclops));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -32,6 +36,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 ExosuitFragmentConstructable.placeDefaultDistance = PlaceDistance;
                 ExosuitFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 ExosuitFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
+                ExosuitFragmentConstructable.rotationEnabled = true;
             };
 
             ExosuitFragmentPrefab.SetGameObject(ExosuitFragmentClone);

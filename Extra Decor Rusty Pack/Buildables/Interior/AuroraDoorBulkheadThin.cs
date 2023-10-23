@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Interior
 {
     public static class BuildableAuroraDoorBulkheadThin
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Doors", "DoorBulkheadThin.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableAuroraDoorBulkheadThin", "Aurora Door Bulkhead Thin", "Door usually placed in alterra ships.")
-            .WithIcon(SpriteManager.Get(TechType.BaseBulkhead));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -36,13 +40,15 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
                 AuroraDoorBulkheadConstructable.placeMinDistance = MinPlaceDistance;
                 AuroraDoorBulkheadConstructable.placeMaxDistance = MaxPlaceDistance;
                 AuroraDoorBulkheadConstructable.transform.localScale = DoorScale;
+                AuroraDoorBulkheadConstructable.rotationEnabled = true;
             };
 
             AuroraDoorBulkheadPrefab.SetGameObject(AuroraDoorBulkheadClone);
             AuroraDoorBulkheadPrefab.SetPdaGroupCategory(TechGroup.InteriorModules, TechCategory.InteriorModule);
 
             AuroraDoorBulkheadPrefab.SetRecipe(new RecipeData(
-                new Ingredient(TechType.Titanium, 1)
+                new Ingredient(TechType.Titanium, 2),
+                new Ingredient(TechType.Silicone, 1)
                 ));
 
             AuroraDoorBulkheadPrefab.Register();

@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 {
     public static class BuildableLifePod17Exploded
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Lifepods", "Lifepod17.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableLifePod17Exploded", "Life Pod 17 Exploded", "Alterra escape pod from the Aurora. Highly damaged")
-            .WithIcon(SpriteManager.Get(TechType.Locker));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -32,6 +36,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 LifePodExplodedConstructable.placeDefaultDistance = PlaceDistance;
                 LifePodExplodedConstructable.placeMinDistance = MinPlaceDistance;
                 LifePodExplodedConstructable.placeMaxDistance = MaxPlaceDistance;
+                LifePodExplodedConstructable.rotationEnabled = true;
             };
 
             LifePodExplodedPrefab.SetGameObject(LifePodExplodedClone);

@@ -34,6 +34,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 DegasiFloatingIslandBaseConstructable.placeDefaultDistance = PlaceDistance;
                 DegasiFloatingIslandBaseConstructable.placeMinDistance = MinPlaceDistance;
                 DegasiFloatingIslandBaseConstructable.placeMaxDistance = MaxPlaceDistance;
+                DegasiFloatingIslandBaseConstructable.rotationEnabled = true;
             };
 
             DegasiFloatingIslandBasePrefab.SetGameObject(DegasiFloatingIslandBaseClone);

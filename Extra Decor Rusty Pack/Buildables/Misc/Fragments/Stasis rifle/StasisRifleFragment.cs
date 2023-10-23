@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
     public static class BuildableStasisRifleFragment
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Fragments", "StasisRifle", "StasisRifle.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableStasisRifleFragment", "Stasis Rifle Fragment", "Stasis rifle fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
-            .WithIcon(SpriteManager.Get(TechType.Cyclops));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -32,6 +36,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 StasisRifleFragmentConstructable.placeDefaultDistance = PlaceDistance;
                 StasisRifleFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 StasisRifleFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
+                StasisRifleFragmentConstructable.rotationEnabled = true;
             };
 
             StasisRifleFragmentPrefab.SetGameObject(StasisRifleFragmentClone);

@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
     public static class BuildableMoonPoolFragment3
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Fragments", "MoonPool", "MoonPool3.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableMoonPoolFragment3", "MoonPool Fragment 3", "MoonPool fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
-            .WithIcon(SpriteManager.Get(TechType.Cyclops));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -32,6 +36,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 MoonPoolConstructable.placeDefaultDistance = PlaceDistance;
                 MoonPoolConstructable.placeMinDistance = MinPlaceDistance;
                 MoonPoolConstructable.placeMaxDistance = MaxPlaceDistance;
+                MoonPoolConstructable.rotationEnabled = true;
             };
 
             MoonPoolPrefab.SetGameObject(MoonPoolClone);

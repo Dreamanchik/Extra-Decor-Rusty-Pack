@@ -30,12 +30,13 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
             {
                 ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Outside | ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
 
-                GameObject DegasiFoundationModel = obj.transform.Find("BaseCell").gameObject;
+                GameObject DegasiFoundationModel = obj.transform.Find("BaseCell").Find("BaseAbandonedFoundationPiece").gameObject;
 
                 Constructable DegasiFoundationConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, DegasiFoundationModel);
                 DegasiFoundationConstructable.placeDefaultDistance = PlaceDistance;
                 DegasiFoundationConstructable.placeMinDistance = MinPlaceDistance;
                 DegasiFoundationConstructable.placeMaxDistance = MaxPlaceDistance;
+                DegasiFoundationConstructable.rotationEnabled = true;
             };
 
             DegasiFoundationPrefab.SetGameObject(DegasiFoundationClone);

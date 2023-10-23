@@ -36,6 +36,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 ExplodedDebrisConstructable.placeDefaultDistance = PlaceDistance;
                 ExplodedDebrisConstructable.placeMinDistance = MinPlaceDistance;
                 ExplodedDebrisConstructable.placeMaxDistance = MaxPlaceDistance;
+                ExplodedDebrisConstructable.rotationEnabled = true;
             };
 
             ExplodedDebrisPrefab.SetGameObject(ExplodedDebrisClone);

@@ -34,6 +34,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 DegasiJellyshroomBaseConstructable.placeDefaultDistance = PlaceDistance;
                 DegasiJellyshroomBaseConstructable.placeMinDistance = MinPlaceDistance;
                 DegasiJellyshroomBaseConstructable.placeMaxDistance = MaxPlaceDistance;
+                DegasiJellyshroomBaseConstructable.rotationEnabled = true;
             };
 
             DegasiJellyshroomBasePrefab.SetGameObject(DegasiJellyshroomBaseClone);

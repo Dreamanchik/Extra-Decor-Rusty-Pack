@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
     public static class BuildableCyclopsHullFragment1
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Fragments", "Cyclops", "Hull1.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableCyclopsFragmentHull1", "Cyclops Hull Fragment 1", "Cyclops hull fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
-            .WithIcon(SpriteManager.Get(TechType.Cyclops));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -32,6 +36,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 CyclopsFragmentConstructable.placeDefaultDistance = PlaceDistance;
                 CyclopsFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 CyclopsFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
+                CyclopsFragmentConstructable.rotationEnabled = true;
             };
 
             CyclopsFragmentPrefab.SetGameObject(CyclopsFragmentClone);

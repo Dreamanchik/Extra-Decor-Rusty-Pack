@@ -6,14 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
-using JetBrains.Annotations;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Interior
 {
     public static class BuildableAuroraDoorBulkheadMedium
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Doors", "DoorBulkheadMedium.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableAuroraDoorBulkheadMedium", "Aurora Door Bulkhead Medium", "Door usually placed in alterra ships.")
-            .WithIcon(SpriteManager.Get(TechType.BaseBulkhead));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -36,6 +39,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
                 AuroraDoorBulkheadConstructable.placeMinDistance = MinPlaceDistance;
                 AuroraDoorBulkheadConstructable.placeMaxDistance = MaxPlaceDistance;
                 AuroraDoorBulkheadConstructable.transform.localScale = DoorScale;
+                AuroraDoorBulkheadConstructable.rotationEnabled = true;
             };
 
             AuroraDoorBulkheadPrefab.SetGameObject(AuroraDoorBulkheadClone);

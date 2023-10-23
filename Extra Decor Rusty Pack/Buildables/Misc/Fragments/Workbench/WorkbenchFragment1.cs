@@ -6,13 +6,17 @@ using Nautilus.Utility;
 using UnityEngine;
 using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
+using System.Reflection;
+using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
     public static class BuildableWorkbenchFragment1
     {
+        public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Fragments", "Workbench", "Workbench1.png");
         public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableWorkbenchFragment1", "Workbench Fragment 1", "Workbench fragment from Aurora's wreckages. Please return to the Alterra Corporation immediately.")
-            .WithIcon(SpriteManager.Get(TechType.Cyclops));
+            .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static void Register()
         {
@@ -32,10 +36,11 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 WorkbenchFragmentConstructable.placeDefaultDistance = PlaceDistance;
                 WorkbenchFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 WorkbenchFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
+                WorkbenchFragmentConstructable.rotationEnabled = true;
             };
 
             WorkbenchFragmentPrefab.SetGameObject(WorkbenchFragmentClone);
-            WorkbenchFragmentPrefab.SetPdaGroupCategory(TechGroup.InteriorModules, TechCategory.InteriorModule);
+            WorkbenchFragmentPrefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule);
 
             WorkbenchFragmentPrefab.SetRecipe(new RecipeData(
                 new Ingredient(TechType.Titanium, 2)

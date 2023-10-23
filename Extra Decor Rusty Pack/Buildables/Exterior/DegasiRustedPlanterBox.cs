@@ -11,13 +11,13 @@ using System.IO;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 {
-    public static class BuildableDegasiRustedSpotlight
+    public static class BuildableDegasiRustedPlanterBox
     {
         public static string modFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        public static string iconPath = Path.Combine(modFolder, "Assets", "Exterior", "RustedSpotlight", "RustedSpotlightIcon.png");
-        public static string texturePath = Path.Combine(modFolder, "Assets", "Exterior", "RustedSpotlight", "RustedSpotlightTexture.png");
-        public static string normalPath = Path.Combine(modFolder, "Assets", "Exterior", "RustedSpotlight", "RustedSpotlightNormal.png");
-        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableDegasiRustedSpotlight", "Degasi Rusted Spotlight", "Rusted spotlight found on the degasi bases.")
+        public static string iconPath = Path.Combine(modFolder, "Assets", "Exterior", "RustedPlanterBox", "RustedPlanterBoxIcon.png");
+        public static string texturePath = Path.Combine(modFolder, "Assets", "Exterior", "RustedPlanterBox", "RustedPlanterBoxTexture.png");
+        public static string normalPath = Path.Combine(modFolder, "Assets", "Exterior", "RustedPlanterBox", "RustedPlanterBoxNormal.png");
+        public static PrefabInfo Info { get; } = PrefabInfo.WithTechType("BuildableDegasiRustedPlanterBox", "Degasi Rusted Planter Box", "Rusted Planter Box found on the degasi bases.")
             .WithIcon(ImageUtils.LoadSpriteFromFile(iconPath));
 
         public static Texture2D Texture = ImageUtils.LoadTextureFromFile(texturePath);
@@ -25,10 +25,10 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 
         public static void Register()
         {
-            CustomPrefab DegasiRustedSpotlightPrefab = new CustomPrefab(Info);
-            CloneTemplate DegasiRustedSpotlightClone = new CloneTemplate(Info, TechType.Spotlight);
+            CustomPrefab DegasiRustedPlanterBoxPrefab = new CustomPrefab(Info);
+            CloneTemplate DegasiRustedPlanterBoxClone = new CloneTemplate(Info, TechType.PlanterBox);
 
-            DegasiRustedSpotlightClone.ModifyPrefab += obj =>
+            DegasiRustedPlanterBoxClone.ModifyPrefab += obj =>
             {
                 var rendered = obj.GetAllComponentsInChildren<Renderer>();
                 foreach (var ren in rendered)
@@ -39,15 +39,15 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 }
             };
 
-            DegasiRustedSpotlightPrefab.SetGameObject(DegasiRustedSpotlightClone);
-            DegasiRustedSpotlightPrefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule).SetBuildable(true);
+            DegasiRustedPlanterBoxPrefab.SetGameObject(DegasiRustedPlanterBoxClone);
+            DegasiRustedPlanterBoxPrefab.SetPdaGroupCategory(TechGroup.InteriorModules, TechCategory.InteriorModule).SetBuildable(true);
 
-            DegasiRustedSpotlightPrefab.SetRecipe(new RecipeData(
+            DegasiRustedPlanterBoxPrefab.SetRecipe(new RecipeData(
                 new Ingredient(TechType.Glass, 1), 
                 new Ingredient(TechType.Titanium, 2) 
                 ));
 
-            DegasiRustedSpotlightPrefab.Register();
+            DegasiRustedPlanterBoxPrefab.Register();
         }
     }
 }
