@@ -26,6 +26,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
             {
                 ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Wall | ConstructableFlags.AllowedOnConstructable;
                 GameObject SolarPowerCellModel = obj.transform.Find("model").gameObject;
+                SolarPowerCellModel.transform.rotation = new Quaternion(0,0,0,0);
 
                 Constructable SolarPowerCellConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, SolarPowerCellModel);
                 SolarPowerCellConstructable.placeDefaultDistance = PlaceDistance;

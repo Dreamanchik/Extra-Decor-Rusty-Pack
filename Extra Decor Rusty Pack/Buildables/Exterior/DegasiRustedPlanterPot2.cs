@@ -30,13 +30,10 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 
             DegasiRustedPlanterPot2Clone.ModifyPrefab += obj =>
             {
-                var rendered = obj.GetAllComponentsInChildren<Renderer>();
-                foreach (var ren in rendered)
-                {
-                    ren.material.mainTexture = Texture;
-                    ren.material.SetTexture(ShaderPropertyID._SpecTex, Texture);
-                    ren.material.SetTexture(ShaderPropertyID._DetailNormalMap, Normal);
-                }
+                MeshRenderer mr = obj.transform.Find("model").gameObject.transform.Find("Base_interior_Planter_Pot_02").gameObject.transform.Find("Base_interior_Planter_Pot_02 1").gameObject.GetComponent<MeshRenderer>();
+                mr.material.mainTexture = Texture;
+                mr.material.SetTexture(ShaderPropertyID._SpecTex, Texture);
+                mr.material.SetTexture(ShaderPropertyID._DetailNormalMap, Normal);
             };
 
             DegasiRustedPlanterPot2Prefab.SetGameObject(DegasiRustedPlanterPot2Clone);

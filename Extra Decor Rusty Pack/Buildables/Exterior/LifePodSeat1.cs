@@ -38,12 +38,6 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 BoxCollider Coll = LifePodSeat1Model.AddComponent<BoxCollider>();
                 Coll.center = bounds.center;
                 Coll.size = bounds.size;
-                SkyApplier skyApplierDelete = LifePodSeat1Model.transform.parent.parent.GetComponent<SkyApplier>();
-                Object.Destroy(skyApplierDelete);
-                SkyApplier skyApplier = LifePodSeat1Model.transform.parent.parent.GetComponent<SkyApplier>();
-                skyApplier.anchorSky = Skies.BaseInterior;
-
-
                 //foreach (GameObject Cube in obj.transform.Find("LOD").gameObject.transform)
                 //{
                 //    if (Cube.name.StartsWith("Cube") && Cube.name != "Cube (37)")
@@ -52,6 +46,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 //    }
                 //};
                 // I cant code 😭😭😭
+
                 GameObject[] toDelete = new GameObject[]
                 {
                     LifePodSeat1Model.transform.parent.Find("exterior").gameObject,
@@ -63,6 +58,16 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                 {
                     Object.Destroy(gameObject);
                 };
+
+                SkyApplier skyApplier1 = LifePodSeat1Model.AddComponent<SkyApplier>();
+                skyApplier1.anchorSky = Skies.BaseInterior;
+
+                SkyApplier skyApplier2 = LifePodSeat1Model.transform.Find("life_pod_seat_01_seatbelt").gameObject.AddComponent<SkyApplier>();
+                skyApplier2.anchorSky = Skies.BaseInterior;
+
+                //LifePodSeat1Model.transform.parent.parent.gameObject.AddComponent<SkyApplier>();
+                //SkyApplier skyApplier = LifePodSeat1Model.transform.parent.parent.gameObject.GetComponent<SkyApplier>();
+                //skyApplier.anchorSky = Skies.BaseInterior;
 
                 Constructable LifePodSeat1Constructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, LifePodSeat1Model);
                 LifePodSeat1Constructable.placeDefaultDistance = PlaceDistance;
