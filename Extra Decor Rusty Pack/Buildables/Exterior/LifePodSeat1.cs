@@ -8,7 +8,6 @@ using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
 using System.Reflection;
 using System.IO;
-using UnityEngine.Experimental.GlobalIllumination;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 {
@@ -30,12 +29,15 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
             {
                 ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Inside | ConstructableFlags.Wall | ConstructableFlags.AllowedOnConstructable;
 
-                GameObject LifePodSeat1Model = obj.transform.Find("life_pod_exploded_02_01").gameObject.transform.Find("interior").gameObject.transform.Find("life_pod_seat_01_base").gameObject;
-                LifePodSeat1Model.transform.parent = LifePodSeat1Model.transform.parent.parent;
-                LifePodSeat1Model.transform.position = new Vector3(0,0,0);
-                MeshFilter MshFlt = LifePodSeat1Model.GetComponent<MeshFilter>();
+
+                GameObject LifePodSeatModel = obj.transform.Find("life_pod_exploded_02_01").gameObject.transform.Find("interior").gameObject.transform.Find("life_pod_seat_01_base").gameObject;
+                SkyApplier skyApplier = LifePodSeatModel.transform.parent.gameObject.GetComponent<SkyApplier>();
+                skyApplier.anchorSky = Skies.BaseInterior;
+                LifePodSeatModel.transform.parent = LifePodSeatModel.transform.parent.parent;
+                LifePodSeatModel.transform.position = new Vector3(0,0,0);
+                MeshFilter MshFlt = LifePodSeatModel.GetComponent<MeshFilter>();
                 Bounds bounds = MshFlt.sharedMesh.bounds;
-                BoxCollider Coll = LifePodSeat1Model.AddComponent<BoxCollider>();
+                BoxCollider Coll = LifePodSeatModel.AddComponent<BoxCollider>();
                 Coll.center = bounds.center;
                 Coll.size = bounds.size;
                 //foreach (GameObject Cube in obj.transform.Find("LOD").gameObject.transform)
@@ -49,8 +51,8 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 
                 GameObject[] toDelete = new GameObject[]
                 {
-                    LifePodSeat1Model.transform.parent.Find("exterior").gameObject,
-                    LifePodSeat1Model.transform.parent.Find("interior").gameObject,
+                    LifePodSeatModel.transform.parent.Find("exterior").gameObject,
+                    LifePodSeatModel.transform.parent.Find("interior").gameObject,
                     obj.transform.Find("LOD").gameObject
                 };
 
@@ -59,17 +61,9 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
                     Object.Destroy(gameObject);
                 };
 
-                SkyApplier skyApplier1 = LifePodSeat1Model.AddComponent<SkyApplier>();
-                skyApplier1.anchorSky = Skies.BaseInterior;
+                MeshRenderer mr = LifePodSeatModel.gameObject.GetComponent<MeshRenderer>();
 
-                SkyApplier skyApplier2 = LifePodSeat1Model.transform.Find("life_pod_seat_01_seatbelt").gameObject.AddComponent<SkyApplier>();
-                skyApplier2.anchorSky = Skies.BaseInterior;
-
-                //LifePodSeat1Model.transform.parent.parent.gameObject.AddComponent<SkyApplier>();
-                //SkyApplier skyApplier = LifePodSeat1Model.transform.parent.parent.gameObject.GetComponent<SkyApplier>();
-                //skyApplier.anchorSky = Skies.BaseInterior;
-
-                Constructable LifePodSeat1Constructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, LifePodSeat1Model);
+                Constructable LifePodSeat1Constructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, LifePodSeatModel);
                 LifePodSeat1Constructable.placeDefaultDistance = PlaceDistance;
                 LifePodSeat1Constructable.placeMinDistance = MinPlaceDistance;
                 LifePodSeat1Constructable.placeMaxDistance = MaxPlaceDistance;

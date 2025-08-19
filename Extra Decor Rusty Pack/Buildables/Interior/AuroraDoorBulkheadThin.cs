@@ -28,9 +28,11 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
 
             AuroraDoorBulkheadClone.ModifyPrefab += obj =>
             {
-                ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Outside | ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
+                ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
 
                 GameObject AuroraDoorBulkheadModel = obj.transform.Find("Starship_doors_manual_01").gameObject;
+                SkyApplier skyApplier = AuroraDoorBulkheadModel.transform.parent.gameObject.GetComponent<SkyApplier>();
+                skyApplier.anchorSky = Skies.BaseInterior;
 
                 Constructable AuroraDoorBulkheadConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, AuroraDoorBulkheadModel);
                 Vector3 DoorScale = AuroraDoorBulkheadConstructable.transform.localScale;

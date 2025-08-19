@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 SeaglideFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 SeaglideFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 SeaglideFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             SeaglideFragmentPrefab.SetGameObject(SeaglideFragmentClone);

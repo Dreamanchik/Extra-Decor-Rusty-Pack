@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 BioReactorFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 BioReactorFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 BioReactorFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             BioReactorFragmentPrefab.SetGameObject(BioReactorFragmentClone);

@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 WorkbenchFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 WorkbenchFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 WorkbenchFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             WorkbenchFragmentPrefab.SetGameObject(WorkbenchFragmentClone);

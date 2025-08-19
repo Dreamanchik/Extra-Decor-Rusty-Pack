@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 MapRoomConstructable.placeMinDistance = MinPlaceDistance;
                 MapRoomConstructable.placeMaxDistance = MaxPlaceDistance;
                 MapRoomConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             MapRoomPrefab.SetGameObject(MapRoomClone);

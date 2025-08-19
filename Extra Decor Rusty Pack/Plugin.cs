@@ -5,6 +5,7 @@ using Extra_Decor_Rusty_Pack.Buildables.Exterior;
 using System.Reflection;
 using Extra_Decor_Rusty_Pack.Buildables.Interior;
 using Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops;
+using Nautilus.Utility.ModMessages;
 
 namespace Extra_Decor_Rusty_Pack
 {
@@ -21,6 +22,8 @@ namespace Extra_Decor_Rusty_Pack
             // set project-scoped logger instance
             Logger = base.Logger;
 
+            // Check for updates
+            ModMessageSystem.SendGlobal("FindMyUpdates", "");
             // Initialize custom prefabs
             InitializePrefabs();
 
@@ -51,9 +54,9 @@ namespace Extra_Decor_Rusty_Pack
             BuildableSubmarineConsole.Register();
             BuildableSubmarineConsoleWide.Register();
             BuildableReinforceHull.Register();
-            //BuildableLifePodSeat1.Register(); --- Need to figure out SkyApplier
-            //BuildableSolarPowerCell.Register(); --- Cant rotate things :(
-            //BuildableHullCrack.Register(); --- Cant rotate things :(((
+            BuildableLifePodSeat1.Register();
+            BuildableSolarPowerCell.Register();
+            BuildableHullCrack.Register();
             BuildableExplodedDebris6.Register();
             BuildableExplodedDebris7.Register();
             BuildableExplodedDebris16.Register();

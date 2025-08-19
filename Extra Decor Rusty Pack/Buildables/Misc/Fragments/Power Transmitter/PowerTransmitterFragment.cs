@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 PowerTransmitterFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 PowerTransmitterFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 PowerTransmitterFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             PowerTransmitterFragmentPrefab.SetGameObject(PowerTransmitterFragmentClone);

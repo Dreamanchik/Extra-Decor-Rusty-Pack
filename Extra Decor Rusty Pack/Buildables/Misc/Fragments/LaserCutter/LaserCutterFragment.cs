@@ -8,6 +8,7 @@ using Nautilus.Assets.PrefabTemplates;
 using static CraftData;
 using System.Reflection;
 using System.IO;
+using System.Collections;
 
 namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
 {
@@ -25,18 +26,23 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
             float MaxPlaceDistance = 20;
             CustomPrefab LaserCutterFragmentPrefab = new CustomPrefab(Info);
             CloneTemplate LaserCutterFragmentClone = new CloneTemplate(Info, "aeff4dad-8256-475b-a764-d5e7028220ce");
-
+            
             LaserCutterFragmentClone.ModifyPrefab += obj =>
             {
                 ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Outside | ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
 
                 GameObject LaserCutterFragmentModel = obj.transform.Find("Laser_Cutter_damaged").gameObject;
+                LaserCutterFragmentModel.EnsureComponent<LargeWorldEntity>();
+                LargeWorldEntity.Register(LaserCutterFragmentModel);
 
                 Constructable LaserCutterFragmentConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, LaserCutterFragmentModel);
                 LaserCutterFragmentConstructable.placeDefaultDistance = PlaceDistance;
                 LaserCutterFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 LaserCutterFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 LaserCutterFragmentConstructable.rotationEnabled = true;
+                //var LargeWorldStreamer = LaserCutterFragmentModel.transform.parent.gameObject.GetComponent<LargeWorldStreamer>();
+                //yield return new WaitUntil(() => LargeWorldStreamer.IsReady());
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             LaserCutterFragmentPrefab.SetGameObject(LaserCutterFragmentClone);

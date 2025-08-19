@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 PowerCellChargerFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 PowerCellChargerFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 PowerCellChargerFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             PowerCellChargerFragmentPrefab.SetGameObject(PowerCellChargerFragmentClone);

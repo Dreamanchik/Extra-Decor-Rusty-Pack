@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 StasisRifleFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 StasisRifleFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 StasisRifleFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             StasisRifleFragmentPrefab.SetGameObject(StasisRifleFragmentClone);

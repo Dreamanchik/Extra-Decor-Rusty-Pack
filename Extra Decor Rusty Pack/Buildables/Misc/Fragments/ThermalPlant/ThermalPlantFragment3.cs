@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 ThermalPlantFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 ThermalPlantFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 ThermalPlantFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             ThermalPlantFragmentPrefab.SetGameObject(ThermalPlantFragmentClone);

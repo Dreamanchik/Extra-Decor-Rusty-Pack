@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 BeaconFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 BeaconFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 BeaconFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             BeaconFragmentPrefab.SetGameObject(BeaconFragmentClone);

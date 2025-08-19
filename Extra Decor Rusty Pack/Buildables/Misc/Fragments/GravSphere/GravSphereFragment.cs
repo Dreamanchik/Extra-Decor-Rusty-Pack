@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 GravSphereFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 GravSphereFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 GravSphereFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             GravSphereFragmentPrefab.SetGameObject(GravSphereFragmentClone);

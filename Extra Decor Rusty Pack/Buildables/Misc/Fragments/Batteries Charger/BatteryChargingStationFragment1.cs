@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 BatteriesChargerFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 BatteriesChargerFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 BatteriesChargerFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             BatteriesChargerFragmentPrefab.SetGameObject(BatteriesChargerFragmentClone);

@@ -28,9 +28,11 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Interior
 
             AuroraDoorFrameClone.ModifyPrefab += obj =>
             {
-                ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Outside | ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
+                ConstructableFlags constructableFlagsInsideOutside = ConstructableFlags.Inside | ConstructableFlags.Rotatable | ConstructableFlags.Ground | ConstructableFlags.AllowedOnConstructable;
 
                 GameObject AuroraDoorFrameModel = obj.transform.Find("Doorframe").gameObject;
+                SkyApplier skyApplier = AuroraDoorFrameModel.transform.parent.gameObject.GetComponent<SkyApplier>();
+                skyApplier.anchorSky = Skies.BaseInterior;
 
                 Constructable AuroraDoorFrameConstructable = PrefabUtils.AddConstructable(obj, Info.TechType, constructableFlagsInsideOutside, AuroraDoorFrameModel);
                 Vector3 DoorScale = AuroraDoorFrameConstructable.transform.localScale;

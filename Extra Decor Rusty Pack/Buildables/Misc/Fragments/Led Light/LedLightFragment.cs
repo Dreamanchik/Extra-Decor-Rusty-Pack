@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 LedLightFragmentConstructable.placeMinDistance = MinPlaceDistance;
                 LedLightFragmentConstructable.placeMaxDistance = MaxPlaceDistance;
                 LedLightFragmentConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             LedLightFragmentPrefab.SetGameObject(LedLightFragmentClone);

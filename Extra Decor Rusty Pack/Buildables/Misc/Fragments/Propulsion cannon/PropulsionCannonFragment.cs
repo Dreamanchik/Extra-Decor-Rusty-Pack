@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 PropulsionCannonConstructable.placeMinDistance = MinPlaceDistance;
                 PropulsionCannonConstructable.placeMaxDistance = MaxPlaceDistance;
                 PropulsionCannonConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             PropulsionCannonPrefab.SetGameObject(PropulsionCannonClone);

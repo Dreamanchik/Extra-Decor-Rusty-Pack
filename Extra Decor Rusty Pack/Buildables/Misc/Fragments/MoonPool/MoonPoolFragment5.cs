@@ -37,6 +37,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Misc.Fragments.Cyclops
                 MoonPoolConstructable.placeMinDistance = MinPlaceDistance;
                 MoonPoolConstructable.placeMaxDistance = MaxPlaceDistance;
                 MoonPoolConstructable.rotationEnabled = true;
+                obj.AddComponent<ImmuneToPropulsioncannon>();
             };
 
             MoonPoolPrefab.SetGameObject(MoonPoolClone);
