@@ -15,7 +15,7 @@ namespace Extra_Decor_Rusty_Pack
     {
         public const string GUID = "com.dreamanchik.ExtraDecorRustyPack";
         public const string Name = "Extra Decor - Rusty Pack";
-        public const string Version = "1.4.0";
+        public const string Version = "1.5.0";
         public new static ManualLogSource Logger { get; private set; }
 
         private static Assembly Assembly { get; } = Assembly.GetExecutingAssembly();
@@ -26,7 +26,7 @@ namespace Extra_Decor_Rusty_Pack
             Logger = base.Logger;
 
             // Check for updates
-            ModMessageSystem.SendGlobal("FindMyUpdates", "https://github.com/Dreamanchik/Extra-Decor-Rusty-Pack/blob/master/Extra%20Decor%20Rusty%20Pack/Version.json");
+            ModMessageSystem.SendGlobal("FindMyUpdates", "https://raw.githubusercontent.com/Dreamanchik/Extra-Decor-Rusty-Pack/refs/heads/master/Extra%20Decor%20Rusty%20Pack/Version.json");
             // Initialize custom prefabs
             InitializePrefabs();
 
