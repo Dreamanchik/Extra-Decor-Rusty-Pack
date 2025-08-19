@@ -9,10 +9,13 @@ using Nautilus.Utility.ModMessages;
 
 namespace Extra_Decor_Rusty_Pack
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    [BepInPlugin(GUID, Name, Version)]
     [BepInDependency("com.snmodding.nautilus")]
     public class Plugin : BaseUnityPlugin
     {
+        public const string GUID = "com.dreamanchik.ExtraDecorRustyPack";
+        public const string Name = "Extra Decor - Rusty Pack";
+        public const string Version = "1.4.0";
         public new static ManualLogSource Logger { get; private set; }
 
         private static Assembly Assembly { get; } = Assembly.GetExecutingAssembly();
