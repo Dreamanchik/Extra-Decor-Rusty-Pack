@@ -31,6 +31,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 
 
                 GameObject LifePodSeatModel = obj.transform.Find("life_pod_exploded_02_01").gameObject.transform.Find("interior").gameObject.transform.Find("life_pod_seat_01_base").gameObject;
+                LifePodSeatModel.transform.parent.gameObject.EnsureComponent<SkyApplier>();
                 SkyApplier skyApplier = LifePodSeatModel.transform.parent.gameObject.GetComponent<SkyApplier>();
                 skyApplier.anchorSky = Skies.BaseInterior;
                 LifePodSeatModel.transform.parent = LifePodSeatModel.transform.parent.parent;

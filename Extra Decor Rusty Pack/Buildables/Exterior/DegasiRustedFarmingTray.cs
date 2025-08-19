@@ -38,6 +38,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 
             DegasiRustedFarmingTrayPrefab.SetGameObject(DegasiRustedFarmingTrayClone);
             DegasiRustedFarmingTrayPrefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule).SetBuildable(true);
+            DegasiRustedFarmingTrayPrefab.SetUnlock(TechType.FarmingTray);
 
             DegasiRustedFarmingTrayPrefab.SetRecipe(new RecipeData(
                 new Ingredient(TechType.Glass, 1), 

@@ -41,6 +41,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 
             DegasiRustedSpotlightPrefab.SetGameObject(DegasiRustedSpotlightClone);
             DegasiRustedSpotlightPrefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule).SetBuildable(true);
+            DegasiRustedSpotlightPrefab.SetUnlock(TechType.Spotlight);
 
             DegasiRustedSpotlightPrefab.SetRecipe(new RecipeData(
                 new Ingredient(TechType.Glass, 1), 

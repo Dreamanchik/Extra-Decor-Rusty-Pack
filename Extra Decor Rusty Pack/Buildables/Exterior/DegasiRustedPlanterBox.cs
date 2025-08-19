@@ -38,6 +38,7 @@ namespace Extra_Decor_Rusty_Pack.Buildables.Exterior
 
             DegasiRustedPlanterBoxPrefab.SetGameObject(DegasiRustedPlanterBoxClone);
             DegasiRustedPlanterBoxPrefab.SetPdaGroupCategory(TechGroup.InteriorModules, TechCategory.InteriorModule).SetBuildable(true);
+            DegasiRustedPlanterBoxPrefab.SetUnlock(TechType.PlanterBox)
 
             DegasiRustedPlanterBoxPrefab.SetRecipe(new RecipeData(
                 new Ingredient(TechType.Glass, 1), 
