@@ -23,7 +23,7 @@ namespace Extra_Decor_Rusty_Pack
             Logger = base.Logger;
 
             // Check for updates
-            ModMessageSystem.SendGlobal("FindMyUpdates", "");
+            ModMessageSystem.SendGlobal("FindMyUpdates", "https://github.com/Dreamanchik/Extra-Decor-Rusty-Pack/blob/master/Extra%20Decor%20Rusty%20Pack/Version.json");
             // Initialize custom prefabs
             InitializePrefabs();
 
@@ -54,9 +54,9 @@ namespace Extra_Decor_Rusty_Pack
             BuildableSubmarineConsole.Register();
             BuildableSubmarineConsoleWide.Register();
             BuildableReinforceHull.Register();
-            BuildableLifePodSeat1.Register();
-            BuildableSolarPowerCell.Register();
-            BuildableHullCrack.Register();
+            //BuildableLifePodSeat1.Register();
+            //BuildableSolarPowerCell.Register();
+            //BuildableHullCrack.Register();
             BuildableExplodedDebris6.Register();
             BuildableExplodedDebris7.Register();
             BuildableExplodedDebris16.Register();
